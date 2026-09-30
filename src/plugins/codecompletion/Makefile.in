@@ -531,6 +531,7 @@ SUBDIRS = resources
 AM_CPPFLAGS = $(WX_CXXFLAGS) \
 			-I$(top_srcdir)/src/include \
 			-I$(top_srcdir)/src/sdk/wxscintilla/include
+AM_CXXFLAGS = -fvisibility=hidden
 
 pluginlibdir = $(pkglibdir)/plugins
 pluginlib_LTLIBRARIES = libcodecompletion.la

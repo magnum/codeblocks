@@ -26,8 +26,10 @@ from DLLs. Instead, we build "sdk" as a static library
 		#endif // EXPORT_EVENTS
 	#endif // EVTIMPORT
 #else
-	#define DLLIMPORT
-	#define EVTIMPORT
+	/* Keep SDK classes at default visibility so plugins built with
+	   -fvisibility=hidden still share the host's typeinfo and vtables. */
+	#define DLLIMPORT __attribute__((visibility("default")))
+	#define EVTIMPORT __attribute__((visibility("default")))
 #endif
 
 #endif // SETTINGS_H

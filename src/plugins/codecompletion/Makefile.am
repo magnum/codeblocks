@@ -4,6 +4,11 @@ AM_CPPFLAGS = $(WX_CXXFLAGS) \
 			-I$(top_srcdir)/src/include \
 			-I$(top_srcdir)/src/sdk/wxscintilla/include
 
+# Hide plugin-local C++ symbols. codecompletion and clangd_client are
+# forks of the same classes; exporting them makes dyld coalesce the two
+# copies and calls land in the wrong plugin (or at NULL) on macOS.
+AM_CXXFLAGS = -fvisibility=hidden
+
 pluginlibdir = $(pkglibdir)/plugins
 
 pluginlib_LTLIBRARIES = libcodecompletion.la

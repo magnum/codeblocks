@@ -21,6 +21,10 @@ else
 AM_CPPFLAGS += -I$(srcdir)/src/unixprocess
 endif
 
+# Same classes as the codecompletion plugin. Hidden visibility keeps each
+# plugin's copy private so dyld does not coalesce them on macOS.
+AM_CXXFLAGS = -fvisibility=hidden
+
 pluginlibdir = $(pkglibdir)/plugins
 
 pluginlib_LTLIBRARIES = \

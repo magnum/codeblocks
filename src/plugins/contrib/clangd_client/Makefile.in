@@ -727,6 +727,7 @@ AM_CPPFLAGS = $(WX_CXXFLAGS) -I$(top_srcdir)/src/include \
 	-I$(top_srcdir)/src/include/tinyxml -I$(srcdir)/src \
 	-I$(srcdir)/src/LSPclient -I$(srcdir)/src/codecompletion \
 	$(am__append_1) $(am__append_2)
+AM_CXXFLAGS = -fvisibility=hidden
 pluginlibdir = $(pkglibdir)/plugins
 pluginlib_LTLIBRARIES = \
 			libclangd_client.la
