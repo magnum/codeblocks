@@ -85,10 +85,9 @@ rm -f "$ZIP"
 ditto -c -k --keepParent "$WORK" "$ZIP"
 
 NOTES="$(cat << EOF
-Build arm64, firmata con Developer ID e notarizzata.
-
-Scarica lo zip, aprilo e trascina CodeBlocks.app in Applicazioni.
-Solo Mac Apple Silicon. Per compilare i programmi serve Xcode o gli strumenti a riga di comando.
+Build arm64, signed, and notarized.   
+Download the zip file, open it, and drag CodeBlocks.app into Applications.  
+For Apple Silicon Macs only. To compile, Xcode or the command line tools are required.
 EOF
 )"
 
