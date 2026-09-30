@@ -66,8 +66,17 @@ Makefile
 /debian/*.debhelper
 /debian/*.substvars
 
+# Local macOS app build and the zip published by mac-release.sh
+/mac-install/
+/dist/
+
 # Editor and OS leftovers
 *~
 *.swp
 *.swo
 .DS_Store
+
+# Finder duplicates, created when a copy lands on an existing name
+# ("Makefile 2", "file 2.lo", "codeblocks 2.spec")
+* 2
+* 2.*
